@@ -1,0 +1,21 @@
+volumes:
+  redis-data: {}
+
+services:
+  fastapi-app:
+    build: .
+    working_dir: /app
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"]
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+
+  redis:
+    image: "redis:alpine"
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6379:6379"
