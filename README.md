@@ -20,6 +20,7 @@ or with docker
 ```bash
 docker compose up --build
 ```
+Access the app on `localhost:8080/docs` and play with the endpoint
 
 ### Access redis cli
 ```bash
