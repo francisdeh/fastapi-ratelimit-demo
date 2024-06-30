@@ -1,5 +1,6 @@
 ## FastAPI Rate limit Demo
 Demo rate limit with Fast API
+Uses the package from [FastAPI Limitter](https://pypi.org/project/fastapi-limiter/)
 
 ### Setup env
 ```bash
